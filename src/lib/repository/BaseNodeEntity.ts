@@ -1,5 +1,6 @@
-import { Builder, CreateOptions } from '../..';
+import { Builder, CreateOptions, WhereSymbols } from '../..';
 import { getConnection } from '../../utils/platform';
+import { CannotDeleteNonFetchedNode } from '../error/CannotDeleteNonFetchedNode';
 
 /**
  * BaseNodeEntity is the class from which any NodeEntity inherits
@@ -20,6 +21,18 @@ export class BaseNodeEntity {
   protected _getNodeType(): string {
     const _reflectedName = Reflect.getMetadata('4jNodeName', this);
     return _reflectedName;
+  }
+
+  async delete(): Promise<this> {
+    if (!this.id) throw new CannotDeleteNonFetchedNode();
+    const builder = new Builder();
+    builder
+      .match({ indice: 'a' })
+      .where('ID(a)', WhereSymbols.EQUAL, this.id)
+      .del('a');
+
+    await builder.execute(getConnection());
+    return this;
   }
 
   async save(): Promise<this> {
