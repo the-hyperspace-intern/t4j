@@ -7,7 +7,7 @@ export type UnknownNodeProps = Record<string, unknown>;
 
 export interface MatchOptions {
   nodeKind?: string;
-  nodeProps: UnknownNodeProps;
+  nodeProps?: UnknownNodeProps;
   indice: string;
 }
 
@@ -29,7 +29,7 @@ export class MatchClause extends Clause {
     const stringified = inspect(nodeProps);
 
     return `(${indice}${nodeKind ? `:${nodeKind}` : ''} ${
-      stringified ?? '{}'
+      nodeProps ? stringified : '{}'
     })`;
   }
 
