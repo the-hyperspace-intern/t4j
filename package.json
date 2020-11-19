@@ -1,0 +1,53 @@
+{
+  "name": "t4j",
+  "author": "ginkoe",
+  "version": "1.0.0",
+  "description": "Type4J ORM",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "NODE_ENV=development nodemon -q --exec ts-node src/index.ts",
+    "build": "NODE_ENV=production tsc",
+    "rollup": "echo Building... && yarn --silent build && echo RollingUp... && rollup -c && echo =======FINISHED ROLLING======= && node ./release/bundle.js",
+    "test": "jest",
+    "build:doc": "typedoc"
+  },
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "neo4j-driver": "^4.2.1",
+    "reflect-metadata": "^0.1.13",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@types/chalk": "^2.2.0",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.7",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "eslint": "^7.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-functional": "^3.0.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "jest": "^26.6.3",
+    "prettier": "^2.0.5",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.0.0",
+    "typedoc": "^0.19.2"
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  }
+}
