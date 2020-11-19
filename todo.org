@@ -37,8 +37,10 @@
    - [X] Every clause has a raw method that returns string raw
 *** TODO Indiciate Node Instance Type for every indice
 ** Clauses
-*** TODO WHERE
+*** DONE WHERE
+    CLOSED: [2020-11-19 خ 23:55]
     Lets not go too complex on this one shall we.
+*** TODO Refactor Where 
 *** DONE Match
     CLOSED: [2020-11-17 ث 16:01]
 *** DONE RETURN
