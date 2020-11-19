@@ -47,7 +47,7 @@ test('match delete query', () => {
 
   const result = builder.Query;
   expect(result).toBe(
-    `MATCH (a:Summoner { name: 'Ginkoe' }), (b { name: 'FL Ayub' }) DELETE DETACH a, b`
+    `MATCH (a:Summoner { name: 'Ginkoe' }), (b { name: 'FL Ayub' }) DETACH DELETE a, b`
   );
 });
 
