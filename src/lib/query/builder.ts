@@ -81,7 +81,11 @@ export abstract class Clause {
     return;
   }
 
-  where(key: string, condition: WhereSymbols, value: string): WhereClause {
+  where(
+    key: string,
+    condition: WhereSymbols,
+    value: PrimitiveTypes
+  ): WhereClause {
     const clause = new WhereClause(key, condition, value);
     this.head = clause;
     return clause;
