@@ -17,6 +17,6 @@ export class DelClause extends Clause {
   }
 
   raw(): string {
-    return `DELETE DETACH ${this.options.join(', ')}`;
+    return `DETACH DELETE ${this.options.join(', ')}`;
   }
 }
