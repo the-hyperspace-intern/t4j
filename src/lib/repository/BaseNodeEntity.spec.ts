@@ -59,7 +59,7 @@ test('get decorated props base node entity', () => {
   });
 });
 
-test('create new node entity', async () => {
+test('create new node & delete it entity', async () => {
   const testConnection = await _genConnection();
   const countBeforeCreate = await _getNodeCount(testConnection);
 
@@ -72,5 +72,9 @@ test('create new node entity', async () => {
   await testNode.save();
   const countAfterCreate = await _getNodeCount(testConnection);
 
+  await testNode.delete();
+  const countAfterDelete = await _getNodeCount(testConnection);
+
   expect(countBeforeCreate).toBe(countAfterCreate - 1);
+  expect(countBeforeCreate).toBe(countAfterDelete);
 });
