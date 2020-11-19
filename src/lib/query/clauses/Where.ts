@@ -10,7 +10,7 @@ class WhereOperator {
 export interface WhereOptions {
   prop: string;
   condition: WhereSymbols;
-  value: string;
+  value: PrimitiveTypes;
 }
 
 export enum WhereSymbols {

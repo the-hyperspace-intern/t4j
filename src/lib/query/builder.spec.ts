@@ -1,5 +1,13 @@
-import { Builder } from '../..';
+import { Builder, WhereSymbols } from '../..';
 import { Connection } from '../connection/Connection';
+
+const testConnection = new Connection({
+  name: 'test',
+  host: 'bolt://localhost:7687',
+  username: 'neo4j',
+  password: 'bigmilkers609',
+  database: 'default',
+});
 
 test('match ret Query', () => {
   const builder = new Builder();
@@ -72,14 +80,6 @@ test('create ret Query', () => {
 });
 
 test('query simple create ret', async () => {
-  const testConnection = new Connection({
-    name: 'test',
-    host: 'bolt://localhost:7687',
-    username: 'neo4j',
-    password: 'bigmilkers609',
-    database: 'default',
-  });
-
   await testConnection.connect();
 
   const builder = new Builder();
@@ -103,5 +103,41 @@ test('query simple create ret', async () => {
     .ret('a', 'b');
 
   const result = await builder.execute(testConnection);
+  await testConnection.close();
   expect(result).not.toBeUndefined();
+});
+
+test('create then fetch with where', async () => {
+  await testConnection.connect();
+
+  let builder = new Builder();
+
+  const randomProp = Math.floor(Math.random() * 6);
+
+  builder
+    .create({
+      indice: 'a',
+      nodeKind: 'CreateFetchNode',
+      nodeProps: {
+        randomProp,
+      },
+    })
+    .ret('ID(a) as ID');
+
+  const response = await builder.execute(testConnection);
+  const createdNodeId = response.records[0].get('ID');
+
+  // Reset Builder
+  builder = new Builder();
+  builder
+    .match({ indice: 'a' })
+    .where('ID(a)', WhereSymbols.EQUAL, createdNodeId)
+    .ret('a.randomProp as randomProp');
+
+  const resultRandomProp = (
+    await builder.execute(testConnection)
+  ).records[0].get('randomProp');
+
+  await testConnection.close();
+  expect(resultRandomProp).toBe(randomProp);
 });
