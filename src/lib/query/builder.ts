@@ -11,6 +11,8 @@ import {
   RetClause,
   WhereClause,
   WhereSymbols,
+  WithRelationClause,
+  WithRelationOptions,
   XorWhereClause,
 } from '../../';
 import { NonVoidArray } from '../common/ObjectType';
@@ -23,6 +25,7 @@ export enum SpecialClause {
 
 export abstract class Clause {
   head?: Clause | SpecialClause;
+  toTrim?: boolean;
   options: unknown;
   //TODO: Indicates what Instance Node Type it is
   indicesCollection: string[] = [];
@@ -109,6 +112,12 @@ export abstract class Clause {
     return clause;
   }
 
+  withRelation(options: WithRelationOptions): WithRelationClause {
+    const clause = new WithRelationClause(options);
+    this.head = clause;
+    return clause;
+  }
+
   get Query(): string {
     let tail = this.head;
     let raw = '';
@@ -116,14 +125,14 @@ export abstract class Clause {
     while (tail != undefined) {
       if (this.head instanceof Clause) {
         tail = tail as Clause;
-        raw += tail.raw() + ' ';
+        raw += (tail.toTrim ? '' : ' ') + tail.raw();
         tail = tail.head;
       } else {
         //TODO: Handle Special Clauses
         break;
       }
     }
-    raw = raw.trimRight();
+    raw = raw.trimLeft();
     return raw;
   }
 
