@@ -1,5 +1,7 @@
 import { Builder, CreateOptions, WhereSymbols } from '../..';
 import { getConnection } from '../../utils/platform';
+import { NODE_ENTITY_METADATA_KEY } from '../decorator/NodeEntity';
+import { NODE_PROP_METADATA_KEY } from '../decorator/NodeProp';
 import { CannotDeleteNonFetchedNode } from '../error/CannotDeleteNonFetchedNode';
 
 /**
@@ -8,18 +10,29 @@ import { CannotDeleteNonFetchedNode } from '../error/CannotDeleteNonFetchedNode'
 export class BaseNodeEntity {
   readonly id: number;
 
+  /**
+   * Extracts Decorated props
+   * @param entity BaseRelationEntity
+   *
+   * @returns a Partial of the entity with only the decorated props
+   */
   static findProps<T extends BaseNodeEntity>(entity: T): Partial<T> {
     const props = {};
     Object.keys(entity).forEach((prop) => {
-      if (Reflect.getMetadata('isNodeProp', entity, prop))
+      if (Reflect.getMetadata(NODE_PROP_METADATA_KEY, entity, prop))
         props[prop] = entity[prop];
     });
 
     return props;
   }
 
+  /**
+   * Gets the custom type of the Node that will be used in the cypher query
+   *
+   * @returns Either constructor's name or custom name if defined
+   */
   protected _getNodeType(): string {
-    const _reflectedName = Reflect.getMetadata('4jNodeName', this);
+    const _reflectedName = Reflect.getMetadata(NODE_ENTITY_METADATA_KEY, this);
     return _reflectedName;
   }
 
