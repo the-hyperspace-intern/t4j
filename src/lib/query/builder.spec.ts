@@ -141,3 +141,33 @@ test('create then fetch with where', async () => {
   await testConnection.close();
   expect(resultRandomProp).toBe(randomProp);
 });
+
+test('create with relation', () => {
+  const builder = new Builder();
+  builder
+    .create({
+      indice: 'a',
+      nodeKind: 'TestNode',
+      nodeProps: {
+        name: 'Woaf',
+      },
+    })
+    .withRelation({
+      toNode: {
+        indice: 'b',
+        nodeKind: 'TestNode',
+        nodeProps: { name: 'Meow' },
+      },
+      relation: {
+        indice: 'r',
+        relKind: 'BARKS',
+        relProps: { times: 10 },
+      },
+      direction: 'uni',
+    })
+    .ret('a', 'b');
+
+  expect(builder.Query).toBe(
+    `CREATE (a:TestNode { name: 'Woaf' })-[r:BARKS { times: 10 }]->(b:TestNode { name: 'Meow' }) RETURN a, b`
+  );
+});
