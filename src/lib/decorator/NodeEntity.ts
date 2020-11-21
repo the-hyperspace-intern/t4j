@@ -1,8 +1,32 @@
+export const NODE_ENTITY_METADATA_KEY = '4jNodeName';
+
+/**
+ * Makes the OGM consider the Class as a NodeEntity
+ * @param name
+ * ```ts
+ * @NodeEntity('myTestNode')
+ * class TestNodeEntity extends BaseNodeEntity {
+ *   @NodeProp()
+ *   username: string;
+ *
+ *   @NodeProp()
+ *   age: number;
+ *
+ *   @NodeProp()
+ *   somethingElse: unknown;
+ *
+ *   notNodeProp: string;
+ * }
+ * ```
+ */
 export function NodeEntity(name?: string): ClassDecorator {
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  return function (target) {
+  return function (target): void {
     const _className = name ?? target.name;
 
-    Reflect.defineMetadata('4jNodeName', _className, target.prototype);
+    Reflect.defineMetadata(
+      NODE_ENTITY_METADATA_KEY,
+      _className,
+      target.prototype
+    );
   };
 }
