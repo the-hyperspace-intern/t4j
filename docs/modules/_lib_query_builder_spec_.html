@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;lib/decorator/NodeProp&quot; | t4j</title>
+	<title>&quot;lib/query/builder.spec&quot; | t4j</title>
 	<meta name="description" content="Documentation for t4j">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_lib_decorator_nodeprop_.html">&quot;lib/decorator/NodeProp&quot;</a>
+					<a href="_lib_query_builder_spec_.html">&quot;lib/query/builder.spec&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;lib/decorator/NodeProp&quot;</h1>
+			<h1>Module &quot;lib/query/builder.spec&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -70,69 +70,26 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="_lib_decorator_nodeprop_.html#node_prop_metadata_key" class="tsd-kind-icon">NODE_<wbr>PROP_<wbr>METADATA_<wbr>KEY</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Functions</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_lib_decorator_nodeprop_.html#nodeprop" class="tsd-kind-icon">Node<wbr>Prop</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_lib_query_builder_spec_.html#testconnection" class="tsd-kind-icon">test<wbr>Connection</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
-					<a name="node_prop_metadata_key" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> NODE_<wbr>PROP_<wbr>METADATA_<wbr>KEY</h3>
-					<div class="tsd-signature tsd-kind-icon">NODE_<wbr>PROP_<wbr>METADATA_<wbr>KEY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"isNodeProp"</span><span class="tsd-signature-symbol"> = &quot;isNodeProp&quot;</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="testconnection" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> test<wbr>Connection</h3>
+					<div class="tsd-signature tsd-kind-icon">test<wbr>Connection<span class="tsd-signature-symbol">:</span> <a href="../classes/_lib_connection_connection_.connection.html" class="tsd-signature-type">Connection</a><span class="tsd-signature-symbol"> = new Connection({name: &#x27;test&#x27;,host: &#x27;bolt://localhost:7687&#x27;,username: &#x27;neo4j&#x27;,password: &#x27;bigmilkers609&#x27;,database: &#x27;default&#x27;,})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/decorator/NodeProp.ts#L1">src/lib/decorator/NodeProp.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/builder.spec.ts#L4">src/lib/query/builder.spec.ts:4</a></li>
 						</ul>
 					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="nodeprop" class="tsd-anchor"></a>
-					<h3>Node<wbr>Prop</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">Node<wbr>Prop<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/decorator/NodeProp.ts#L21">src/lib/decorator/NodeProp.ts:21</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Makes the OGM consider the Prop as a visible one for the query builder</p>
-									<p>```ts
-										@NodeEntity(&#39;myTestNode&#39;)
-										class TestNodeEntity extends BaseNodeEntity {
-										@NodeProp()
-									username: string;</p>
-								</div>
-								<p>  @NodeProp()
-								age: number;</p>
-								<p>  @NodeProp()
-								somethingElse: unknown;</p>
-								<p>  notNodeProp: string;
-								}</p>
-								<pre><code></code></pre>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
-						</li>
-					</ul>
 				</section>
 			</section>
 		</div>
@@ -157,7 +114,7 @@
 					<li class=" tsd-kind-module">
 						<a href="_lib_decorator_nodeentity_.html">&quot;lib/decorator/<wbr>Node<wbr>Entity&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="_lib_decorator_nodeprop_.html">&quot;lib/decorator/<wbr>Node<wbr>Prop&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -184,7 +141,7 @@
 					<li class=" tsd-kind-module">
 						<a href="_lib_query_builder_.html">&quot;lib/query/builder&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="_lib_query_builder_spec_.html">&quot;lib/query/builder.spec&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -218,11 +175,8 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="_lib_decorator_nodeprop_.html#node_prop_metadata_key" class="tsd-kind-icon">NODE_<wbr>PROP_<wbr>METADATA_<wbr>KEY</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_lib_decorator_nodeprop_.html#nodeprop" class="tsd-kind-icon">Node<wbr>Prop</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_lib_query_builder_spec_.html#testconnection" class="tsd-kind-icon">test<wbr>Connection</a>
 					</li>
 				</ul>
 			</nav>

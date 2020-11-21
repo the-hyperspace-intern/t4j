@@ -77,6 +77,17 @@
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">WhereClause</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="_lib_query_clauses_where_.andwhereclause.html" class="tsd-signature-type">AndWhereClause</a>
+									</li>
+									<li>
+										<a href="_lib_query_clauses_where_.orwhereclause.html" class="tsd-signature-type">OrWhereClause</a>
+									</li>
+									<li>
+										<a href="_lib_query_clauses_where_.xorwhereclause.html" class="tsd-signature-type">XorWhereClause</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</li>
@@ -97,6 +108,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_lib_query_clauses_where_.whereclause.html#head" class="tsd-kind-icon">head</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_lib_query_clauses_where_.whereclause.html#indicescollection" class="tsd-kind-icon">indices<wbr>Collection</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_lib_query_clauses_where_.whereclause.html#kindofwhere" class="tsd-kind-icon">kindof<wbr>Where</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_lib_query_clauses_where_.whereclause.html#options" class="tsd-kind-icon">options</a></li>
 							</ul>
 						</section>
@@ -109,13 +121,16 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lib_query_clauses_where_.whereclause.html#andwhere" class="tsd-kind-icon">and<wbr>Where</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lib_query_clauses_where_.whereclause.html#create" class="tsd-kind-icon">create</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lib_query_clauses_where_.whereclause.html#del" class="tsd-kind-icon">del</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lib_query_clauses_where_.whereclause.html#execute" class="tsd-kind-icon">execute</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lib_query_clauses_where_.whereclause.html#match" class="tsd-kind-icon">match</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lib_query_clauses_where_.whereclause.html#orwhere" class="tsd-kind-icon">or<wbr>Where</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_lib_query_clauses_where_.whereclause.html#raw" class="tsd-kind-icon">raw</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lib_query_clauses_where_.whereclause.html#ret" class="tsd-kind-icon">ret</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lib_query_clauses_where_.whereclause.html#where" class="tsd-kind-icon">where</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lib_query_clauses_where_.whereclause.html#xorwhere" class="tsd-kind-icon">xor<wbr>Where</a></li>
 							</ul>
 						</section>
 					</div>
@@ -127,19 +142,25 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Where<wbr>Clause<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>conditions<span class="tsd-signature-symbol">: </span><a href="../interfaces/_lib_query_clauses_where_.whereoptions.html" class="tsd-signature-type">WhereOptions</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lib_query_clauses_where_.whereclause.html" class="tsd-signature-type">WhereClause</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Where<wbr>Clause<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, condition<span class="tsd-signature-symbol">: </span><a href="../enums/_lib_query_clauses_where_.wheresymbols.html" class="tsd-signature-type">WhereSymbols</a>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PrimitiveTypes</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lib_query_clauses_where_.whereclause.html" class="tsd-signature-type">WhereClause</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/lib/query/clauses/Where.ts:24</li>
+									<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/clauses/Where.ts#L24">src/lib/query/clauses/Where.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>conditions: <a href="../interfaces/_lib_query_clauses_where_.whereoptions.html" class="tsd-signature-type">WhereOptions</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>condition: <a href="../enums/_lib_query_clauses_where_.wheresymbols.html" class="tsd-signature-type">WhereSymbols</a></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">PrimitiveTypes</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_lib_query_clauses_where_.whereclause.html" class="tsd-signature-type">WhereClause</a></h4>
@@ -154,9 +175,9 @@
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> head</h3>
 					<div class="tsd-signature tsd-kind-icon">head<span class="tsd-signature-symbol">:</span> <a href="_lib_query_builder_.clause.html" class="tsd-signature-type">Clause</a><span class="tsd-signature-symbol"> | </span><a href="../enums/_lib_query_builder_.specialclause.html" class="tsd-signature-type">SpecialClause</a></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_lib_query_clauses_where_.whereclause.html">WhereClause</a>.<a href="_lib_query_clauses_where_.whereclause.html#head">head</a></p>
+						<p>Inherited from <a href="_lib_query_builder_.clause.html">Clause</a>.<a href="_lib_query_builder_.clause.html#head">head</a></p>
 						<ul>
-							<li>Defined in src/lib/query/builder.ts:21</li>
+							<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/builder.ts#L25">src/lib/query/builder.ts:25</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -165,20 +186,30 @@
 					<h3>indices<wbr>Collection</h3>
 					<div class="tsd-signature tsd-kind-icon">indices<wbr>Collection<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_lib_query_clauses_where_.whereclause.html">WhereClause</a>.<a href="_lib_query_clauses_where_.whereclause.html#indicescollection">indicesCollection</a></p>
+						<p>Inherited from <a href="_lib_query_builder_.clause.html">Clause</a>.<a href="_lib_query_builder_.clause.html#indicescollection">indicesCollection</a></p>
 						<ul>
-							<li>Defined in src/lib/query/builder.ts:24</li>
+							<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/builder.ts#L28">src/lib/query/builder.ts:28</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="kindofwhere" class="tsd-anchor"></a>
+					<h3>kindof<wbr>Where</h3>
+					<div class="tsd-signature tsd-kind-icon">kindof<wbr>Where<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;WHERE&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/clauses/Where.ts#L23">src/lib/query/clauses/Where.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
 					<a name="options" class="tsd-anchor"></a>
 					<h3>options</h3>
-					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_lib_query_clauses_where_.whereoptions.html" class="tsd-signature-type">WhereOptions</a><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_lib_query_clauses_where_.whereoptions.html" class="tsd-signature-type">WhereOptions</a></div>
 					<aside class="tsd-sources">
 						<p>Overrides <a href="_lib_query_builder_.clause.html">Clause</a>.<a href="_lib_query_builder_.clause.html#options">options</a></p>
 						<ul>
-							<li>Defined in src/lib/query/clauses/Where.ts:24</li>
+							<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/clauses/Where.ts#L24">src/lib/query/clauses/Where.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -194,9 +225,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_lib_query_clauses_where_.whereclause.html">WhereClause</a>.<a href="_lib_query_clauses_where_.whereclause.html#query">Query</a></p>
+								<p>Inherited from <a href="_lib_query_builder_.clause.html">Clause</a>.<a href="_lib_query_builder_.clause.html#query">Query</a></p>
 								<ul>
-									<li>Defined in src/lib/query/builder.ts:85</li>
+									<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/builder.ts#L112">src/lib/query/builder.ts:112</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -207,6 +238,36 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="andwhere" class="tsd-anchor"></a>
+					<h3>and<wbr>Where</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">and<wbr>Where<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, condition<span class="tsd-signature-symbol">: </span><a href="../enums/_lib_query_clauses_where_.wheresymbols.html" class="tsd-signature-type">WhereSymbols</a>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lib_query_clauses_where_.whereclause.html" class="tsd-signature-type">WhereClause</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lib_query_builder_.clause.html">Clause</a>.<a href="_lib_query_builder_.clause.html#andwhere">andWhere</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/builder.ts#L94">src/lib/query/builder.ts:94</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>condition: <a href="../enums/_lib_query_clauses_where_.wheresymbols.html" class="tsd-signature-type">WhereSymbols</a></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_lib_query_clauses_where_.whereclause.html" class="tsd-signature-type">WhereClause</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="create" class="tsd-anchor"></a>
 					<h3>create</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -215,9 +276,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_lib_query_clauses_where_.whereclause.html">WhereClause</a>.<a href="_lib_query_clauses_where_.whereclause.html#create">create</a></p>
+								<p>Inherited from <a href="_lib_query_builder_.clause.html">Clause</a>.<a href="_lib_query_builder_.clause.html#create">create</a></p>
 								<ul>
-									<li>Defined in src/lib/query/builder.ts:64</li>
+									<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/builder.ts#L68">src/lib/query/builder.ts:68</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -251,9 +312,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_lib_query_clauses_where_.whereclause.html">WhereClause</a>.<a href="_lib_query_clauses_where_.whereclause.html#del">del</a></p>
+								<p>Inherited from <a href="_lib_query_builder_.clause.html">Clause</a>.<a href="_lib_query_builder_.clause.html#del">del</a></p>
 								<ul>
-									<li>Defined in src/lib/query/builder.ts:74</li>
+									<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/builder.ts#L78">src/lib/query/builder.ts:78</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -282,9 +343,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_lib_query_clauses_where_.whereclause.html">WhereClause</a>.<a href="_lib_query_clauses_where_.whereclause.html#execute">execute</a></p>
+								<p>Inherited from <a href="_lib_query_builder_.clause.html">Clause</a>.<a href="_lib_query_builder_.clause.html#execute">execute</a></p>
 								<ul>
-									<li>Defined in src/lib/query/builder.ts:103</li>
+									<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/builder.ts#L130">src/lib/query/builder.ts:130</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -306,9 +367,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_lib_query_clauses_where_.whereclause.html">WhereClause</a>.<a href="_lib_query_clauses_where_.whereclause.html#match">match</a></p>
+								<p>Inherited from <a href="_lib_query_builder_.clause.html">Clause</a>.<a href="_lib_query_builder_.clause.html#match">match</a></p>
 								<ul>
-									<li>Defined in src/lib/query/builder.ts:36</li>
+									<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/builder.ts#L40">src/lib/query/builder.ts:40</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -334,6 +395,36 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="orwhere" class="tsd-anchor"></a>
+					<h3>or<wbr>Where</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">or<wbr>Where<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, condition<span class="tsd-signature-symbol">: </span><a href="../enums/_lib_query_clauses_where_.wheresymbols.html" class="tsd-signature-type">WhereSymbols</a>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lib_query_clauses_where_.whereclause.html" class="tsd-signature-type">WhereClause</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lib_query_builder_.clause.html">Clause</a>.<a href="_lib_query_builder_.clause.html#orwhere">orWhere</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/builder.ts#L100">src/lib/query/builder.ts:100</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>condition: <a href="../enums/_lib_query_clauses_where_.wheresymbols.html" class="tsd-signature-type">WhereSymbols</a></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_lib_query_clauses_where_.whereclause.html" class="tsd-signature-type">WhereClause</a></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 					<a name="raw" class="tsd-anchor"></a>
 					<h3>raw</h3>
@@ -345,7 +436,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_lib_query_builder_.clause.html">Clause</a>.<a href="_lib_query_builder_.clause.html#raw">raw</a></p>
 								<ul>
-									<li>Defined in src/lib/query/clauses/Where.ts:31</li>
+									<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/clauses/Where.ts#L35">src/lib/query/clauses/Where.ts:35</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -361,9 +452,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_lib_query_clauses_where_.whereclause.html">WhereClause</a>.<a href="_lib_query_clauses_where_.whereclause.html#ret">ret</a></p>
+								<p>Inherited from <a href="_lib_query_builder_.clause.html">Clause</a>.<a href="_lib_query_builder_.clause.html#ret">ret</a></p>
 								<ul>
-									<li>Defined in src/lib/query/builder.ts:50</li>
+									<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/builder.ts#L54">src/lib/query/builder.ts:54</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -393,16 +484,58 @@
 					<a name="where" class="tsd-anchor"></a>
 					<h3>where</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">where<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lib_query_clauses_where_.whereclause.html" class="tsd-signature-type">WhereClause</a></li>
+						<li class="tsd-signature tsd-kind-icon">where<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, condition<span class="tsd-signature-symbol">: </span><a href="../enums/_lib_query_clauses_where_.wheresymbols.html" class="tsd-signature-type">WhereSymbols</a>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PrimitiveTypes</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lib_query_clauses_where_.whereclause.html" class="tsd-signature-type">WhereClause</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_lib_query_clauses_where_.whereclause.html">WhereClause</a>.<a href="_lib_query_clauses_where_.whereclause.html#where">where</a></p>
+								<p>Inherited from <a href="_lib_query_builder_.clause.html">Clause</a>.<a href="_lib_query_builder_.clause.html#where">where</a></p>
 								<ul>
-									<li>Defined in src/lib/query/builder.ts:81</li>
+									<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/builder.ts#L84">src/lib/query/builder.ts:84</a></li>
 								</ul>
 							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>condition: <a href="../enums/_lib_query_clauses_where_.wheresymbols.html" class="tsd-signature-type">WhereSymbols</a></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">PrimitiveTypes</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_lib_query_clauses_where_.whereclause.html" class="tsd-signature-type">WhereClause</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="xorwhere" class="tsd-anchor"></a>
+					<h3>xor<wbr>Where</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">xor<wbr>Where<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, condition<span class="tsd-signature-symbol">: </span><a href="../enums/_lib_query_clauses_where_.wheresymbols.html" class="tsd-signature-type">WhereSymbols</a>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lib_query_clauses_where_.whereclause.html" class="tsd-signature-type">WhereClause</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lib_query_builder_.clause.html">Clause</a>.<a href="_lib_query_builder_.clause.html#xorwhere">xorWhere</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/Ginkoe/t4j/blob/37ef72d/src/lib/query/builder.ts#L106">src/lib/query/builder.ts:106</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>condition: <a href="../enums/_lib_query_clauses_where_.wheresymbols.html" class="tsd-signature-type">WhereSymbols</a></h5>
+								</li>
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_lib_query_clauses_where_.whereclause.html" class="tsd-signature-type">WhereClause</a></h4>
 						</li>
 					</ul>
@@ -434,10 +567,19 @@
 						<a href="../modules/_lib_decorator_nodeprop_.html">&quot;lib/decorator/<wbr>Node<wbr>Prop&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="../modules/_lib_decorator_relationentity_.html">&quot;lib/decorator/<wbr>Relation<wbr>Entity&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_lib_decorator_relationprop_.html">&quot;lib/decorator/<wbr>Relation<wbr>Prop&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="../modules/_lib_driver_driverfactory_.html">&quot;lib/driver/<wbr>Driver<wbr>Factory&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_lib_error_cannotconnectalreadyconnected_.html">&quot;lib/error/<wbr>Cannot<wbr>Connect<wbr>Already<wbr>Connected&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_lib_error_cannotdeletenonfetchednode_.html">&quot;lib/error/<wbr>Cannot<wbr>Delete<wbr>Non<wbr>Fetched<wbr>Node&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_lib_error_cannotdisconnectwithoutconnection_.html">&quot;lib/error/<wbr>Cannot<wbr>Disconnect<wbr>Without<wbr>Connection&quot;</a>
@@ -446,10 +588,10 @@
 						<a href="../modules/_lib_error_couldnotestablishconnection_.html">&quot;lib/error/<wbr>Could<wbr>Not<wbr>Establish<wbr>Connection&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/_lib_query_buider_spec_.html">&quot;lib/query/buider.spec&quot;</a>
+						<a href="../modules/_lib_query_builder_.html">&quot;lib/query/builder&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/_lib_query_builder_.html">&quot;lib/query/builder&quot;</a>
+						<a href="../modules/_lib_query_builder_spec_.html">&quot;lib/query/builder.spec&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_lib_query_clauses_create_.html">&quot;lib/query/clauses/<wbr>Create&quot;</a>
@@ -473,12 +615,24 @@
 						<a href="../modules/_lib_repository_basenodeentity_spec_.html">&quot;lib/repository/<wbr>Base<wbr>Node<wbr>Entity.spec&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="../modules/_lib_repository_baserelation_.html">&quot;lib/repository/<wbr>Base<wbr>Relation&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="../modules/_utils_platform_.html">&quot;utils/platform&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_lib_query_clauses_where_.wheresymbols.html" class="tsd-kind-icon">Where<wbr>Symbols</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_lib_query_clauses_where_.andwhereclause.html" class="tsd-kind-icon">And<wbr>Where<wbr>Clause</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_lib_query_clauses_where_.orwhereclause.html" class="tsd-kind-icon">Or<wbr>Where<wbr>Clause</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
@@ -493,11 +647,17 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_lib_query_clauses_where_.whereclause.html#indicescollection" class="tsd-kind-icon">indices<wbr>Collection</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_lib_query_clauses_where_.whereclause.html#kindofwhere" class="tsd-kind-icon">kindof<wbr>Where</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_lib_query_clauses_where_.whereclause.html#options" class="tsd-kind-icon">options</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
 								<a href="_lib_query_clauses_where_.whereclause.html#query" class="tsd-kind-icon">Query</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lib_query_clauses_where_.whereclause.html#andwhere" class="tsd-kind-icon">and<wbr>Where</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_lib_query_clauses_where_.whereclause.html#create" class="tsd-kind-icon">create</a>
@@ -511,6 +671,9 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_lib_query_clauses_where_.whereclause.html#match" class="tsd-kind-icon">match</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lib_query_clauses_where_.whereclause.html#orwhere" class="tsd-kind-icon">or<wbr>Where</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_lib_query_clauses_where_.whereclause.html#raw" class="tsd-kind-icon">raw</a>
 							</li>
@@ -520,12 +683,18 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_lib_query_clauses_where_.whereclause.html#where" class="tsd-kind-icon">where</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lib_query_clauses_where_.whereclause.html#xorwhere" class="tsd-kind-icon">xor<wbr>Where</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_lib_query_clauses_where_.whereoperator.html" class="tsd-kind-icon">Where<wbr>Operator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_lib_query_clauses_where_.xorwhereclause.html" class="tsd-kind-icon">Xor<wbr>Where<wbr>Clause</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_lib_query_clauses_where_.whereoptions.html" class="tsd-kind-icon">Where<wbr>Options</a>
@@ -543,15 +712,16 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
