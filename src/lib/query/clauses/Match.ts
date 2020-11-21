@@ -3,7 +3,7 @@ import { inspect } from 'util';
 import { Clause } from '../../../';
 import { randomIndice } from '../../../utils/platform';
 
-export type UnknownNodeProps = Record<string, PrimitiveTypes>;
+export type UnknownNodeProps = Record<string, unknown>;
 
 export interface MatchOptions {
   nodeKind?: string;
