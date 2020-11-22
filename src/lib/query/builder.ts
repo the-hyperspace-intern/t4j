@@ -94,7 +94,11 @@ export abstract class Clause {
     return clause;
   }
 
-  andWhere(key: string, condition: WhereSymbols, value: string): WhereClause {
+  andWhere(
+    key: string,
+    condition: WhereSymbols,
+    value: PrimitiveTypes
+  ): WhereClause {
     const clause = new AndWhereClause(key, condition, value);
     this.head = clause;
     return clause;
