@@ -26,7 +26,7 @@ export class CreateClause extends Clause {
     const stringified = inspect(nodeProps);
 
     return `(${indice}${nodeKind ? `:${nodeKind}` : ''} ${
-      stringified ?? '{}'
+      nodeProps ? stringified : ''
     })`;
   }
 
