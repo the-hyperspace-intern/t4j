@@ -1,21 +1,9 @@
+import { _genConnection } from '../../utils/testing';
 import { Connection } from '../connection/Connection';
 import { NodeEntity } from '../decorator/NodeEntity';
 import { NodeProp } from '../decorator/NodeProp';
 
 import { BaseNodeEntity } from './BaseNodeEntity';
-
-async function _genConnection(): Promise<Connection> {
-  const testConnection = new Connection({
-    name: 'test',
-    host: 'bolt://localhost:7687',
-    username: 'neo4j',
-    password: 'bigmilkers609',
-    database: 'default',
-  });
-
-  await testConnection.connect();
-  return testConnection;
-}
 
 async function _getNodeCount(connection: Connection): Promise<number> {
   const response = await connection.driver.session.run(
