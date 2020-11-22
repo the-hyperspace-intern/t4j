@@ -8,7 +8,9 @@
 *** DONE Make connection pool
     CLOSED: [2020-11-18 ر 01:02]
 ** TODO Refactoring Repository Logic
-*** TODO Save
+*** DONE Save
+*** TODO 
+    CLOSED: [2020-11-22 ح 15:02]
 
 * Tests
 ** Connection
@@ -27,8 +29,12 @@
 
 * Repository
 ** TODO NodeEntity
+*** TODO Link
 ** TODO RelationEntity
-
+*** TODO Save
+*** TODO Fetch
+*** TODO Detach (Node Delete)
+*** TODO Cluster
 * QueryBuilder
 ** Logic
 *** General
@@ -66,5 +72,22 @@
 *** USE
 *** LOAD CSV
 
+** TODO Relations
+* Relations
+** Decorators
+*** TODO Props Decorator
+*** TODO Class Decorator
+** BaseRelation
+*** TODO Link
+    - [ ] Fix Response
 * /!\
 ** TODO Better way of handling 64bits ints 
+
+** TODO Fix CREATE only accepts uni direction relations
+* Notes
+** Relations
+   - [X] Relation Classes for specific relations
+   - [ ] Bidirectional
+     - [ ] Fix Create to accept both bidirectional
+   - [ ] Remake Match to accept relationships
+   - [ ] Remake create to accept relationships 
