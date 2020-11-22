@@ -3,7 +3,7 @@ import { inspect } from 'util';
 import { Clause, MatchOptions, UnknownNodeProps } from '../../..';
 import { randomIndice } from '../../../utils/platform';
 
-type RelationDirection = 'uni' | 'bi';
+export type RelationDirection = 'uni' | 'bi';
 
 interface RelationOptions {
   indice?: string;
@@ -32,7 +32,7 @@ export class WithRelationClause extends Clause {
     const stringifiedNode = inspect(toNode.nodeProps);
     const rawNode = `(${nodeIndice}${
       toNode.nodeKind ? `:${toNode.nodeKind}` : ``
-    } ${toNode.nodeProps ? stringifiedNode : '{}'})`;
+    } ${toNode.nodeProps ? stringifiedNode : ''})`;
 
     return rawNode;
   }
@@ -45,7 +45,7 @@ export class WithRelationClause extends Clause {
     // Gen Raw Relation
     const stringifiedRel = inspect(relation.relProps);
     const rawRelation = `-[${relationIndice}:${relation.relKind} ${
-      relation.relProps ? stringifiedRel : '{}'
+      relation.relProps ? stringifiedRel : ''
     }]-${direction == 'bi' ? '' : '>'}`;
 
     return rawRelation;
