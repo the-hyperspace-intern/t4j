@@ -3,6 +3,7 @@ import { getConnection } from '../../utils/platform';
 import { NODE_ENTITY_METADATA_KEY } from '../decorator/NodeEntity';
 import { NODE_PROP_METADATA_KEY } from '../decorator/NodeProp';
 import { CannotDeleteNonFetchedNode } from '../error/CannotDeleteNonFetchedNode';
+// import { BaseRelationEntity } from './BaseRelation';
 
 /**
  * BaseNodeEntity is the class from which any NodeEntity inherits
@@ -24,6 +25,10 @@ export class BaseNodeEntity {
     });
 
     return props;
+  }
+
+  private isDecorated(prop: keyof this): boolean {
+    return Reflect.getMetadata(NODE_PROP_METADATA_KEY, this, prop.toString());
   }
 
   /**
@@ -62,6 +67,20 @@ export class BaseNodeEntity {
 
     return this;
   }
+
+  /**
+   * Injects an object into the instance
+   * @param props Only accepts keys of current instance
+   */
+  inject(props: Partial<this>): this {
+    for (const key in props) {
+      if (this.isDecorated(key)) this[key] = props[key];
+    }
+    return this;
+  }
+
+  //TODO: Link (Requires: Create with relation QueryBuilder)
+  // async link(relation: BaseRelationEntity, to: BaseNodeEntity): Promise<this> {}
 
   // TODO: Requires WHERE Clause
   /* async del(): Promise<this> {
