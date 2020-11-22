@@ -1,8 +1,11 @@
-import { Builder, CreateOptions, WhereSymbols } from '../..';
+import { Builder, CreateOptions, RelationDirection, WhereSymbols } from '../..';
 import { getConnection } from '../../utils/platform';
 import { NODE_ENTITY_METADATA_KEY } from '../decorator/NodeEntity';
 import { NODE_PROP_METADATA_KEY } from '../decorator/NodeProp';
 import { CannotDeleteNonFetchedNode } from '../error/CannotDeleteNonFetchedNode';
+import { NodeNeedToBeFetched } from '../error/NodesNeedToBeFetched';
+
+import { BaseRelationEntity } from './BaseRelation';
 // import { BaseRelationEntity } from './BaseRelation';
 
 /**
@@ -76,6 +79,18 @@ export class BaseNodeEntity {
     for (const key in props) {
       if (this.isDecorated(key)) this[key] = props[key];
     }
+    return this;
+  }
+
+  async link(
+    relation: BaseRelationEntity,
+    to: BaseNodeEntity,
+    direction?: RelationDirection
+  ): Promise<this> {
+    if (!this.id) throw new NodeNeedToBeFetched('link', this.constructor.name);
+    if (!to.id) throw new NodeNeedToBeFetched('link', to.constructor.name);
+
+    await relation.link(this, to, direction ?? 'uni');
     return this;
   }
 
