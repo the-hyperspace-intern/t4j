@@ -1,8 +1,12 @@
+import { QueryResult } from 'neo4j-driver';
+
+import { RelationDirection, WhereSymbols } from '../..';
+import { getConnection } from '../../utils/platform';
 import { RELATION_ENTITY_METADATA_KEY } from '../decorator/RelationEntity';
 import { RELATION_PROP_METADATA_KEY } from '../decorator/RelationProp';
-import { BaseNodeEntity } from './BaseNodeEntity';
+import { Builder } from '../query/builder';
 
-type RelationDirection = 'uni' | 'bi';
+import { BaseNodeEntity } from './BaseNodeEntity';
 
 export class BaseRelationEntity {
   readonly id: number;
@@ -35,7 +39,35 @@ export class BaseRelationEntity {
     return props;
   }
 
-  link(a: BaseNodeEntity, b: BaseNodeEntity, direction: RelationDirection) {
-    //TODO: Query Create Relation
+  //TODO: Bidirectional not working here
+  async link(
+    from: BaseNodeEntity,
+    to: BaseNodeEntity,
+    direction: RelationDirection
+  ): Promise<[this, QueryResult]> {
+    const builder = new Builder();
+    builder
+      .match({ indice: 'a' }, { indice: 'b' })
+      .where('ID(a)', WhereSymbols.EQUAL, from.id)
+      .andWhere('ID(b)', WhereSymbols.EQUAL, to.id)
+      .create({ indice: 'a' })
+      .withRelation({
+        relation: {
+          indice: 'r',
+          relKind: this._getRelationType(),
+          relProps: BaseRelationEntity.findProps(this),
+        },
+        direction: direction,
+        toNode: { indice: 'b' },
+      })
+      .ret('r');
+
+    const response = await builder.execute(getConnection());
+
+    return [this, response];
   }
+
+  // link(a: BaseNodeEntity, b: BaseNodeEntity, direction: RelationDirection) {
+  //   //TODO: Query Create Relation
+  // }
 }
